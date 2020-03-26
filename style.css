@@ -1,12 +1,17 @@
+
+
 html, body {
   margin: 0;
   padding: 0;
+  background: 0;
 }
 
 body {
     margin: 100px auto 0 auto;
     width: 80%;
     text-align: center;
+
+    background: url(https://media.giphy.com/media/NsBknNwmmWE8WU1q2U/giphy.gif);
 }
 
 canvas {
