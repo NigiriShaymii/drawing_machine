@@ -30,13 +30,16 @@ function draw() {
   stroke(red, green, blue);
   circle(x, y, 100);
 
+
   if (start) {
     noFill();
 
-    frameRate(50);
+    if (frameCount % 8 === 0) { 
     red = random(255);
     green = random(255);
     blue = random(255);
+    }
+
     background(red, green, blue, 25);
 
     // if (mouseIsPressed) {
@@ -78,20 +81,26 @@ function draw() {
 
 function keyTyped() {
 
-  console.log(` key ${key} s is typed`);
-  if (key === 'q') {
-    //save this image
-    saveCanvas('fileName', 'png');
-  } else if (key === 'e') {
+  // console.log(` key ${key} s is typed`);
+  // if (key === 'q') {
+  //   //save this image
+  //   saveCanvas('fileName', 'png');
+  // }
+  if (key === 'e') {
     //display image
 
     //console.log(array[0]);
     //console.log(array[0][1]);
 
     beginShape();
+    // for (let i = 0; i < array.length; i++) {
+    //   //line(array[i][0], array[i][1], array[i+ 1][0], array[i + 1][1]);
+    //   curveVertex(array[i][0], array[i][1]);
+    // }
+
     for (let i = 0; i < array.length; i++) {
-      //line(array[i][0], array[i][1], array[i+ 1][0], array[i + 1][1]);
-      curveVertex(array[i][0], array[i][1]);
+
+      curveVertex(x, y);
     }
     endShape();
   }

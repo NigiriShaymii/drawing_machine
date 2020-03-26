@@ -18,6 +18,7 @@ canvas {
   margin: 0 auto 0 auto;
   display: block;
   border: 5px solid black;
+  padding: 50px;
 
 }
 
@@ -35,4 +36,9 @@ h3 {
 
 p {
   color: white;
+}
+
+div {
+  padding: 40px;
+  background-image: radial-gradient(#258BBF 5%, #2C4187 35%, black 70%);
 }
