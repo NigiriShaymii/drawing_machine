@@ -6,11 +6,19 @@ let blue;
 let green;
 let start = false;
 
+let ranX;
+let ranY;
+let ranSize;
+
 function setup() {
   createCanvas(800, 800);
   background(255, 255, 255);
 
   strokeWeight(10);
+
+  textSize(40);
+  textAlign(CENTER);
+  text("CLICK ME AS FAST AS YOU CAN", width/2, height/4 * 3);
 
   x = width / 2;
   y = height / 2;
@@ -22,7 +30,7 @@ function draw() {
   green = random(255);
   blue = random(255);
 
-  fill(255);
+  stroke(red, green, blue);
   circle(x, y, 100);
 
   if (start) {
@@ -78,8 +86,6 @@ function keyTyped() {
     //console.log(array[0]);
     //console.log(array[0][1]);
 
-
-
     beginShape();
     for (let i = 0; i < array.length; i++) {
       //line(array[i][0], array[i][1], array[i+ 1][0], array[i + 1][1]);
@@ -88,12 +94,23 @@ function keyTyped() {
     endShape();
   }
 
-
   return false;
 }
 
 function mousePressed() {
+
+  for(let i = 0; i < 5; i++)
+  {
+  ranX = random(width);
+  ranY = random(height);
+  ranSize = random(200);
+
   array = [];
   backgroundColor = 0;
   start = true;
+
+  strokeWeight = ranSize;
+  stroke(red, green, blue);
+  circle(ranX, ranY, ranSize);
+  }
 }
