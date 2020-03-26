@@ -26,15 +26,17 @@ function setup() {
 }
 
 function draw() {
-  red = random(255);
-  green = random(255);
-  blue = random(255);
 
   stroke(red, green, blue);
   circle(x, y, 100);
 
   if (start) {
     noFill();
+
+    frameRate(50);
+    red = random(255);
+    green = random(255);
+    blue = random(255);
     background(red, green, blue, 25);
 
     // if (mouseIsPressed) {
@@ -52,7 +54,7 @@ function draw() {
     //   endShape();
     // }
 
-    stroke(map(mouseX, 0, 600, 0, 255, true))
+    //stroke(map(mouseX, 0, 600, 0, 255, true))
     //line(mouseX, mouseY, pmouseX, pmouseY);
     background(backgroundColor, 10);
     backgroundColor += 5;
