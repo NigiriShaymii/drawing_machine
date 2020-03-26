@@ -25,13 +25,13 @@ function setup() {
   x = width / 2;
   y = height / 2;
 
-  music = createAudio('.../audio/StringedDisco.mp3');
+  music = createAudio('StringedDisco.mp3');
 
   // here we set the element to autoplay
   // The element will play as soon
   // as it is able to do so.
 
-    music.autoplay(true);
+
 
 }
 
@@ -134,6 +134,7 @@ function mousePressed() {
   stroke(red, green, blue);
   circle(ranX, ranY, ranSize);
 
+    music.autoplay(true);
 
   }
 }
