@@ -10,6 +10,8 @@ let ranX;
 let ranY;
 let ranSize;
 
+let music;
+
 function setup() {
   createCanvas(800, 800);
   background(255, 255, 255);
@@ -22,6 +24,14 @@ function setup() {
 
   x = width / 2;
   y = height / 2;
+
+  music = createAudio('.../audio/StringedDisco.mp3');
+
+  // here we set the element to autoplay
+  // The element will play as soon
+  // as it is able to do so.
+
+    music.autoplay(true);
 
 }
 
@@ -123,5 +133,7 @@ function mousePressed() {
   strokeWeight = ranSize;
   stroke(red, green, blue);
   circle(ranX, ranY, ranSize);
+
+
   }
 }
