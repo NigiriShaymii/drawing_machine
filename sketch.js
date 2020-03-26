@@ -1,67 +1,69 @@
 let array = [];
-let backgroundColor = 200;
 let x;
 let y;
-let color; 
+let red;
+let blue;
+let green;
+let start = false;
 
 function setup() {
   createCanvas(800, 800);
-  background(backgroundColor);
+  background(255, 255, 255);
 
   strokeWeight(10);
 
-  x = width/2;
-  y = height/2;
+  x = width / 2;
+  y = height / 2;
 
 }
 
 function draw() {
+  red = random(255);
+  green = random(255);
+  blue = random(255);
 
-  strokeColor = red;
   fill(255);
   circle(x, y, 100);
 
-  noFill();
-  background(backgroundColor, 25);
+  if (start) {
+    noFill();
+    background(red, green, blue, 25);
 
-  // if (mouseIsPressed) {
-  //   stroke(map(mouseX, 0, 600, 0, 255, true))
-  //   //line(mouseX, mouseY, pmouseX, pmouseY);
-  //   background(backgroundColor, 25);
-  //   backgroundColor -= 5;
-  //   array.push([mouseX, mouseY]);
-  //
-  //   beginShape();
-  //   for (let i = 0; i < array.length; i++) {
-  //     //line(array[i][0], array[i][1], array[i+ 1][0], array[i + 1][1]);
-  //     curveVertex(array[i][0], array[i][1]);
-  //   }
-  //   endShape();
-  // }
+    // if (mouseIsPressed) {
+    //   stroke(map(mouseX, 0, 600, 0, 255, true))
+    //   //line(mouseX, mouseY, pmouseX, pmouseY);
+    //   background(backgroundColor, 25);
+    //   backgroundColor -= 5;
+    //   array.push([mouseX, mouseY]);
+    //
+    //   beginShape();
+    //   for (let i = 0; i < array.length; i++) {
+    //     //line(array[i][0], array[i][1], array[i+ 1][0], array[i + 1][1]);
+    //     curveVertex(array[i][0], array[i][1]);
+    //   }
+    //   endShape();
+    // }
 
-  stroke(map(mouseX, 0, 600, 0, 255, true))
-  //line(mouseX, mouseY, pmouseX, pmouseY);
-  background(backgroundColor, 25);
-  backgroundColor -= 5;
-  array.push([mouseX, mouseY]);
+    stroke(map(mouseX, 0, 600, 0, 255, true))
+    //line(mouseX, mouseY, pmouseX, pmouseY);
+    background(backgroundColor, 10);
+    backgroundColor += 5;
+    array.push([mouseX, mouseY]);
 
-  if(keyIsDown(87)) //w
-  {
-    y -= 5;
+    if (keyIsDown(87)) //w
+    {
+      y -= 10;
+    } else if (keyIsDown(83)) //s
+    {
+      y += 10;
+    } else if (keyIsDown(65)) //a
+    {
+      x -= 10;
+    } else if (keyIsDown(68)) //d
+    {
+      x += 10;
+    }
   }
-  else if(keyIsDown(83)) //s
-  {
-    y += 5;
-  }
-  else if(keyIsDown(65)) //a
-  {
-    x -= 5;
-  }
-  else if(keyIsDown(68)) //d
-  {
-    x += 5;
-  }
-
 }
 
 function keyTyped() {
@@ -87,10 +89,11 @@ function keyTyped() {
   }
 
 
-   return false;
+  return false;
 }
 
 function mousePressed() {
   array = [];
-  backgroundColor = 55;
+  backgroundColor = 0;
+  start = true;
 }
